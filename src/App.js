@@ -1,72 +1,40 @@
 import React from "react";
-import Tooltip from "./Tooltip";
-import "./styles.css";
+import Tooltip from "./components/Tooltip";
+
 
 export default function App() {
   return (
-    <div className="App">
-      <h1>Hello, this is a React tooltip demo</h1>
-      <p> Try hovering the emojis below </p>
+    <div className="container" style={{marginTop :50,}}>
+      <h1 style={{color:"orange",marginLeft :10}}>Hello, this is a React tooltip test</h1>
+      <div className="border border-4" >
+      <div className="row" style={{marginLeft :10}}>
+    <div className="col" style={{marginBottom :10}}>
+    <Tooltip content="I'm a right tooltip!" direction="right">
+          <button className="btn btn-primary">right Tooltip Button</button>
+          </Tooltip>
+    </div>
+    <div className="col" style={{marginBottom :10}}>
+    <Tooltip content="I'm a top tooltip!" direction="top">
+          <button className="btn btn-success">top Tooltip Button</button>
+          </Tooltip>
+    </div>
+</div>
+<div className="row" style={{marginLeft :10}}>
+    <div className="col" style={{marginBottom :10}}>
+    <Tooltip content="I'm a bottom tooltip!" direction="bottom">
+          <button className="btn btn-secondary">bottom Tooltip Button</button>
+          </Tooltip>
+    </div>
+    
+    <div className="col" style={{marginBottom :10}}>
+    <Tooltip content="I'm a left tooltip!" direction="left">
+          <button className="btn btn-danger">left Tooltip Button</button>
+          </Tooltip>
+    </div>
+    </div>
+</div>
 
-      <div className="example-wrapper">
-        <Tooltip content="Yee-haw!" direction="right">
-          <span className="example-emoji" role="img" aria-label="cowboy emoji">
-            🤠
-          </span>
-        </Tooltip>
-      </div>
-
-      <div className="example-wrapper">
-        <Tooltip content="Quack!" direction="top">
-          <span className="example-emoji" role="img" aria-label="duck emoji">
-            🦆
-          </span>
-        </Tooltip>
-      </div>
-
-      <div className="example-wrapper">
-        <Tooltip
-          content="Ring-ding-ding-ding-dingeringeding!"
-          direction="bottom"
-        >
-          <span className="example-emoji" role="img" aria-label="fox emoji">
-            🦊
-          </span>
-        </Tooltip>
-      </div>
-
-      <div className="example-wrapper">
-        <Tooltip
-          content={
-            <>
-              Bring me
-              <br />
-              to your leader
-            </>
-          }
-          direction="left"
-          delay="0"
-        >
-          <span className="example-emoji" role="img" aria-label="alien emoji">
-            👽
-          </span>
-        </Tooltip>
-      </div>
-
-      <div className="example-wrapper">
-        <Tooltip
-          content={
-            <span role="img" aria-label="rabbit emoji">
-              🐇
-            </span>
-          }
-          direction="bottom"
-        >
-          <span className="example-emoji" role="img" aria-label="tophat emoji">
-            🎩
-          </span>
-        </Tooltip>
-      </div>
+      
     </div>
   );
 }
